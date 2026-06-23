@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Abstract — 2026 SAIAE Biennial Symposium</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="form-page">
+
+  <nav class="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/saiae-logo-white.png" alt="SAIAE Logo" class="nav-logo-img" />
+        <span class="nav-logo-text">Symposium 2026<small>SAIAE Biennial</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="timetable.html">Programme</a></li>
+        <li><a href="venue.html">Venue &amp; Travel</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="abstract.html" class="active">Submit Abstract</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag">Call for Abstracts</span>
+      <h1>Abstract Submission</h1>
+      <p>Report on new or innovative developments to inform professionals and stimulate discussion — deadline 14 August 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Guidelines strip -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto 48px; ">
+        <div class="card" style="padding:20px; border-left:4px solid var(--gold);">
+          <h3 style="color:var(--green-dark); font-size:1rem;">&#128197; Deadline</h3>
+          <p style="font-size:.85rem; margin-top:6px;"><strong>14 August 2026</strong><br>Abstract submission closes</p>
+        </div>
+        <div class="card" style="padding:20px; border-left:4px solid var(--green-mid);">
+          <h3 style="color:var(--green-dark); font-size:1rem;">&#128203; Length</h3>
+          <p style="font-size:.85rem; margin-top:6px;"><strong>Max 300 words</strong><br>Plus a suitable title</p>
+        </div>
+        <div class="card" style="padding:20px; border-left:4px solid var(--green-mid);">
+          <h3 style="color:var(--green-dark); font-size:1rem;">&#9993; Notification</h3>
+          <p style="font-size:.85rem; margin-top:6px;"><strong>31 August 2026</strong><br>Acceptance emails sent</p>
+        </div>
+        <div class="card" style="padding:20px; border-left:4px solid var(--gold);">
+          <h3 style="color:var(--green-dark); font-size:1rem;">&#128247; Required</h3>
+          <p style="font-size:.85rem; margin-top:6px;"><strong>Author photo</strong><br>&amp; contact details</p>
+        </div>
+      </div>
+
+      <!-- Email submission notice -->
+      <div class="notice-box" style="max-width:760px; margin:0 auto 32px;">
+        <strong>&#9993; How to submit:</strong> Email your abstract to <a href="mailto:senzo@saiae.co.za?subject=Symposium%20Abstract">senzo@saiae.co.za</a> with the subject line <strong>"Symposium Abstract"</strong>, or complete the form below. Abstracts must include a suitable title plus a photo and contact details of the corresponding author.
+      </div>
+
+      <div class="form-wrap">
+        <h2 style="color:var(--green-dark); margin-bottom:4px;">Abstract Submission Form</h2>
+        <p style="margin-bottom:8px;">Fields marked <span style="color:#c0392b;">*</span> are required. Please review the <a href="#guidelines" style="color:var(--green-mid);">submission guidelines</a> before completing this form.</p>
+
+        <!-- Submissions are delivered by FormSubmit (https://formsubmit.co) — no backend required.
+             multipart/form-data lets the corresponding-author photo be sent as an attachment. -->
+        <form id="abstractForm" action="https://formsubmit.co/senzo@saiae.co.za" method="POST" enctype="multipart/form-data" data-type="abstract" novalidate>
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_subject" value="New Abstract Submission — 2026 SAIAE" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-section-title">Corresponding Author Details</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Title</label>
+              <select name="title">
+                <option value="">Select…</option>
+                <option>Mr</option><option>Ms</option><option>Mrs</option>
+                <option>Dr</option><option>Prof</option><option>Eng</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>First Name <span class="req">*</span></label>
+              <input type="text" name="firstName" placeholder="Corresponding author's first name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Last Name <span class="req">*</span></label>
+              <input type="text" name="lastName" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address <span class="req">*</span></label>
+              <input type="email" name="email" placeholder="Correspondence email" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Institution / Organisation <span class="req">*</span></label>
+              <input type="text" name="institution" required />
+            </div>
+            <div class="form-group">
+              <label>Phone / Mobile <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="+27 00 000 0000" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Corresponding Author Photo <span class="req">*</span> <span style="font-weight:400; color:var(--text-muted);">(required — JPG/PNG)</span></label>
+            <input type="file" name="authorPhoto" accept="image/*" required />
+          </div>
+
+          <div class="form-section-title">Co-Authors</div>
+          <div class="form-group">
+            <label>Co-Author(s) <span style="font-weight:400; color:var(--text-muted);">(if applicable)</span></label>
+            <textarea name="coAuthors" placeholder="List co-authors as: Full Name (Institution) — one per line." style="min-height:90px;"></textarea>
+          </div>
+
+          <div class="form-section-title">Paper Details</div>
+          <div class="form-group">
+            <label>Paper Title <span class="req">*</span></label>
+            <input type="text" name="paperTitle" placeholder="A suitable, descriptive title" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Topic / Field <span class="req">*</span></label>
+              <select name="track" required>
+                <option value="">Select a field…</option>
+                <option>4th Industrial Revolution</option>
+                <option>Agricultural Mechanization</option>
+                <option>Aquaculture &amp; Hydroponics</option>
+                <option>Circular Economy</option>
+                <option>Climate Change</option>
+                <option>Energy Management</option>
+                <option>Farm Road Design</option>
+                <option>Food Engineering &amp; Post-Harvest Management</option>
+                <option>Food &amp; Fibre Production Processing</option>
+                <option>General Conditions of Contract</option>
+                <option>Hydrology &amp; Dams</option>
+                <option>Irrigation</option>
+                <option>Livestock Water</option>
+                <option>Packaging &amp; Packing Facilities</option>
+                <option>Precision Agriculture</option>
+                <option>Primary Production</option>
+                <option>Renewable Energy</option>
+                <option>Soil Conservation</option>
+                <option>Structural Engineering</option>
+                <option>Subsurface Drainage Systems in Agriculture</option>
+                <option>Water Supply &amp; Water Resource Management</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Presentation Preference <span class="req">*</span></label>
+              <select name="presentationType" required>
+                <option value="">Select…</option>
+                <option value="oral">Oral Presentation</option>
+                <option value="poster">Poster Presentation</option>
+                <option value="virtual">Virtual / Online Presentation</option>
+                <option value="either">Either (author's preference)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Abstract <span class="req">*</span> <span style="font-weight:400; color:var(--text-muted);">(maximum 300 words)</span></label>
+            <textarea name="abstract" id="abstractText" placeholder="Report on new or innovative developments and/or applications of existing techniques. Outline the background, objectives, methods, results, and conclusions of your work." style="min-height:240px;" required></textarea>
+            <span style="font-size:.75rem; color:var(--text-muted);" id="wordCount">0 / 300 words</span>
+          </div>
+
+          <div class="form-group">
+            <label>Keywords <span style="font-weight:400; color:var(--text-muted);">(comma-separated)</span></label>
+            <input type="text" name="keywords" placeholder="e.g. drip irrigation, water-use efficiency, precision agriculture" />
+          </div>
+
+          <div class="form-section-title">Declaration</div>
+          <div class="form-check">
+            <input type="checkbox" id="original" name="original" required />
+            <label for="original">I confirm this work is original and reports on relevant, current agricultural engineering techniques, tools, innovations, or projects. <span class="req">*</span></label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="present" name="present" required />
+            <label for="present">If accepted, the presenting author will register for the Symposium and deliver the presentation (in person or virtually). <span class="req">*</span></label>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Submit Abstract</button>
+          </div>
+          <p class="form-note">Abstracts are reviewed by the SAIAE National Council. Authors will be notified of acceptance by 31 August 2026. You may also email your abstract directly to senzo@saiae.co.za (subject: "Symposium Abstract").</p>
+        </form>
+      </div>
+
+      <!-- Guidelines -->
+      <div id="guidelines" class="form-wrap" style="margin-top:40px;">
+        <h3 style="color:var(--green-dark); margin-bottom:16px;">Submission Guidelines</h3>
+        <div class="form-section-title">Requirements</div>
+        <ul style="padding-left:20px; margin-bottom:16px;">
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Abstracts must be <strong>no longer than 300 words</strong>.</li>
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Include a <strong>suitable title</strong>.</li>
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Include a <strong>photo and contact details of the corresponding author</strong>.</li>
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Contributions should report on new or innovative developments and/or applications of existing techniques to inform professionals and stimulate discussion.</li>
+        </ul>
+        <div class="form-section-title">Submission &amp; Review</div>
+        <ul style="padding-left:20px; margin-bottom:16px;">
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Submit to <strong>Mr Senzo Masikane — senzo@saiae.co.za</strong>, subject line "Symposium Abstract", by <strong>14 August 2026</strong>.</li>
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Abstracts are reviewed by the SAIAE National Council.</li>
+          <li style="margin-bottom:8px; color:var(--text-muted); font-size:.9rem;">Authors notified of acceptance by 31 August 2026; preliminary programme released 11 September 2026.</li>
+        </ul>
+        <p style="font-size:.85rem; color:var(--text-muted);">An official abstract template is provided with the symposium announcements. Contact senzo@saiae.co.za to request the template.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="images/saiae-logo-white.png" alt="SAIAE Logo" class="footer-logo-img" /><span class="logo-accent">SAIAE</span> Symposium 2026<p>The South African Institute of Agricultural Engineers</p><p style="margin-top:6px;">21–23 October 2026 · Upington, Northern Cape</p></div>
+      <div class="footer-links">
+        <a href="event.html">Event</a><a href="speakers.html">Speakers</a>
+        <a href="timetable.html">Programme</a><a href="venue.html">Venue &amp; Travel</a>
+        <a href="register.html">Register</a><a href="abstract.html">Submit Abstract</a>
+      </div>
+      <div class="footer-contact"><p>&#9993; admin@saiae.co.za</p><p>&#9993; senzo@saiae.co.za</p><p>&#128222; 078 804 2673</p><p>&#127760; www.saiae.co.za</p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 SAIAE Biennial Symposium · NPO Reg. No: 231-602 NPO · PBO Ref: 930075964 · PO Box 912 719, Silverton, 0127</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
