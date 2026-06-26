@@ -183,9 +183,9 @@ p  { line-height: 1.7; color: var(--text-muted); }
   content: '';
   position: absolute; inset: 0;
   background: url('../images/hero-bg.jpg') center/cover no-repeat;
-  opacity: .15;
+  opacity: .45;
 }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,92,46,.92) 0%, rgba(46,139,87,.75) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(26,92,46,.92) 0%, rgba(26,92,46,.74) 45%, rgba(46,139,87,.52) 100%); }
 .hero-content {
   position: relative; z-index: 2;
   padding: 80px 24px 100px;
@@ -266,8 +266,27 @@ p  { line-height: 1.7; color: var(--text-muted); }
 }
 .about-text h2 { color: var(--green-dark); }
 .about-text p { margin-bottom: 16px; }
+.about-media {
+  position: relative;
+}
+.about-media img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 14px 40px rgba(0,0,0,.18);
+  display: block;
+}
+.about-media::after {
+  content: '';
+  position: absolute;
+  right: -14px; bottom: -14px;
+  width: 70%; height: 70%;
+  border: 3px solid var(--gold);
+  border-radius: var(--radius);
+  z-index: -1;
+}
 .about-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-top: 52px;
 }
 .stat {
   background: var(--white);
@@ -289,6 +308,60 @@ p  { line-height: 1.7; color: var(--text-muted); }
   color: var(--text-muted);
   font-weight: 600;
   margin-top: 4px;
+}
+
+/* ---- INLINE FEATURE IMAGE (content pages) ---- */
+.feature-img {
+  margin: 28px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.feature-img img { width: 100%; display: block; }
+.feature-img figcaption {
+  background: var(--green-dark);
+  color: rgba(255,255,255,.9);
+  font-size: .82rem;
+  font-style: italic;
+  padding: 12px 18px;
+}
+
+/* ---- IMAGE GALLERY BAND ---- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.gallery-item {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 28px 16px 14px;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .92rem;
+  background: linear-gradient(transparent, rgba(26,92,46,.9));
+}
+.gallery-item figcaption small {
+  display: block;
+  font-weight: 600;
+  font-size: .72rem;
+  opacity: .85;
+  margin-top: 2px;
 }
 
 /* ---- PAGE HERO (inner pages) ---- */
@@ -835,6 +908,8 @@ p  { line-height: 1.7; color: var(--text-muted); }
   .nav-links.open { display: flex; }
   .nav-toggle { display: block; }
   .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .about-stats { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+  .about-media::after { display: none; }
   .event-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 24px; }
