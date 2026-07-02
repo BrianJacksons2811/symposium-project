@@ -139,6 +139,54 @@ setupForm('abstractForm');
   }
 })();
 
+// --- Sponsor logo marquee: seamless infinite right-to-left scroll ---
+// The HTML holds one copy of the sponsor items. We repeat them to fill the
+// viewport, then duplicate the whole run once so the CSS translateX(-50%)
+// animation loops with no visible jump. Speed is kept constant (~55 px/sec)
+// regardless of how many sponsors are added.
+(function () {
+  const track = document.querySelector('.sponsor-track');
+  if (!track) return;
+  // Respect reduced-motion — CSS shows the logos statically (wrapped) instead.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const originals = Array.from(track.children);
+  if (!originals.length) return;
+
+  const stride = el => {
+    const s = getComputedStyle(el);
+    return el.getBoundingClientRect().width + parseFloat(s.marginRight || 0);
+  };
+
+  function build() {
+    // Start from a single clean copy of the originals
+    track.innerHTML = '';
+    originals.forEach(el => track.appendChild(el.cloneNode(true)));
+
+    // Repeat that copy until it comfortably exceeds the visible width
+    const viewport = track.parentElement.offsetWidth;
+    let copyWidth = Array.from(track.children).reduce((w, el) => w + stride(el), 0);
+    const reps = Math.max(1, Math.ceil((viewport + 120) / copyWidth));
+    if (reps > 1) {
+      const base = originals.map(el => el.cloneNode(true));
+      for (let r = 1; r < reps; r++) base.forEach(el => track.appendChild(el.cloneNode(true)));
+      copyWidth *= reps;
+    }
+
+    // Duplicate the whole run so translateX(-50%) wraps seamlessly
+    Array.from(track.children).forEach(el => track.appendChild(el.cloneNode(true)));
+
+    track.style.animationDuration = Math.max(16, Math.round(copyWidth / 55)) + 's';
+  }
+
+  build();
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 200);
+  }, { passive: true });
+})();
+
 // --- Smooth scroll for anchor links ---
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

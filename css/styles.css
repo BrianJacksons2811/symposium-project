@@ -767,6 +767,73 @@ p  { line-height: 1.7; color: var(--text-muted); }
   line-height: 1.4;
 }
 
+/* ---- SPONSORS (scrolling marquee) ---- */
+.sponsor-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 40px;
+  padding: 8px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.sponsor-track {
+  display: flex;
+  align-items: flex-start;
+  width: max-content;
+  will-change: transform;
+  animation: sponsor-scroll 30s linear infinite;
+}
+.sponsor-marquee:hover .sponsor-track { animation-play-state: paused; }
+@keyframes sponsor-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.sponsor-item {
+  flex: 0 0 auto;
+  width: 150px;
+  margin-right: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+.sponsor-logo {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform .25s;
+}
+.sponsor-item:hover .sponsor-logo { transform: scale(1.06); }
+.sponsor-logo img { max-width: 74%; max-height: 74%; object-fit: contain; }
+.sponsor-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .8rem;
+  line-height: 1.25;
+  color: var(--green-dark);
+}
+.sponsor-tier-tag {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .6rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 2px 12px;
+  border-radius: 20px;
+}
+.tier-platinum { background: linear-gradient(135deg, #e9eaee, #c7cad3); color: #464a55; border: 1px solid #c7cad3; }
+.tier-bronze   { background: linear-gradient(135deg, #eccaa6, #c98a4f); color: #5a3818; border: 1px solid #c98a4f; }
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+}
+
 /* ---- FEE TABLE ---- */
 .table-scroll { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 .fee-table {
