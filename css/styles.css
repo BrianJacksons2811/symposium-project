@@ -183,7 +183,7 @@ p  { line-height: 1.7; color: var(--text-muted); }
   content: '';
   position: absolute; inset: 0;
   background: url('../images/hero-bg.jpg') center/cover no-repeat;
-  opacity: .45;
+  opacity: .65;
 }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(26,92,46,.92) 0%, rgba(26,92,46,.74) 45%, rgba(46,139,87,.52) 100%); }
 .hero-content {
@@ -830,6 +830,7 @@ p  { line-height: 1.7; color: var(--text-muted); }
 }
 .tier-platinum { background: linear-gradient(135deg, #e9eaee, #c7cad3); color: #464a55; border: 1px solid #c7cad3; }
 .tier-bronze   { background: linear-gradient(135deg, #eccaa6, #c98a4f); color: #5a3818; border: 1px solid #c98a4f; }
+.tier-endorser { background: rgba(46,139,87,.12); color: var(--green-dark); border: 1px solid rgba(46,139,87,.38); }
 @media (prefers-reduced-motion: reduce) {
   .sponsor-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
 }
