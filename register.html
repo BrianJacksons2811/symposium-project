@@ -156,6 +156,24 @@
             <input type="text" name="memberNumber" placeholder="Leave blank if not a member" />
           </div>
 
+          <div class="form-section-title">Billing &amp; Invoicing Details</div>
+          <div class="form-group">
+            <label>Invoice to <span class="req">*</span></label>
+            <select name="invoiceTo" required>
+              <option value="">Select…</option>
+              <option>Individual</option>
+              <option>Company / Organisation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Billing Address <span class="req">*</span></label>
+            <textarea name="billingAddress" placeholder="Street address / PO Box, city, postal code and country — exactly as it should appear on the invoice" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>VAT Number <span style="font-weight:400; color:var(--text-muted);">(companies only — leave blank if not VAT-registered)</span></label>
+            <input type="text" name="vatNumber" placeholder="e.g. 4XXXXXXXXX" />
+          </div>
+
           <div class="form-section-title">Registration Category</div>
           <div class="form-group">
             <label>Registration Type <span class="req">*</span></label>
@@ -199,12 +217,11 @@
 
           <div class="form-section-title">Optional Activities</div>
           <div class="form-group">
-            <label>Technical Tour Preference <span style="font-weight:400; color:var(--text-muted);">(Friday 23 October)</span></label>
-            <select name="tour">
-              <option value="">No preference / Not attending</option>
-              <option>Renewable Energy Plant (Solar CSP)</option>
-              <option>Raisins Sorting Facility</option>
-              <option>Export Table Grapes Packhouse</option>
+            <label>Will you attend the technical tour? <span style="font-weight:400; color:var(--text-muted);">(Friday 23 October — tour details to be confirmed in coming announcements)</span> <span class="req">*</span></label>
+            <select name="tourAttendance" required>
+              <option value="">Select…</option>
+              <option>Yes</option>
+              <option>No</option>
             </select>
           </div>
           <div class="form-check">
@@ -248,7 +265,7 @@
         <a href="timetable.html">Programme</a><a href="venue.html">Venue &amp; Travel</a>
         <a href="register.html">Register</a><a href="abstract.html">Submit Abstract</a>
       </div>
-      <div class="footer-contact"><p>&#9993; admin@saiae.co.za</p><p>&#9993; senzo@saiae.co.za</p><p>&#128222; 078 804 2673</p><p>&#127760; www.saiae.co.za</p></div>
+      <div class="footer-contact"><p>&#9993; admin@saiae.co.za</p><p>&#9993; senzo@saiae.co.za</p><p>&#128222; 078 804 2673</p><p>&#127760; <a href="https://saiae.co.za/" target="_blank" rel="noopener">www.saiae.co.za</a></p></div>
     </div>
     <div class="footer-bottom"><p>&copy; 2026 SAIAE Biennial Symposium · NPO Reg. No: 231-602 NPO · PBO Ref: 930075964 · PO Box 912 719, Silverton, 0127</p></div>
   </footer>

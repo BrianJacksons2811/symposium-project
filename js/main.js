@@ -19,10 +19,10 @@ const navbar = document.querySelector('.navbar');
 if (navbar) {
   const onScroll = () => {
     if (window.scrollY > 10) {
-      navbar.style.background = 'rgba(26, 92, 46, 0.92)';
+      navbar.style.background = 'rgba(51, 73, 29, 0.92)';
       navbar.style.boxShadow = '0 4px 24px rgba(0,0,0,.28)';
     } else {
-      navbar.style.background = 'rgba(26, 92, 46, 0.78)';
+      navbar.style.background = 'rgba(51, 73, 29, 0.80)';
       navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,.18)';
     }
   };
@@ -87,11 +87,16 @@ function setupForm(formId) {
   if (!form) return;
 
   form.addEventListener('submit', e => {
-    // Point FormSubmit's redirect at our own thank-you page on the current domain
+    // Point FormSubmit's redirect at our own thank-you page. Resolve it RELATIVE
+    // to this page (not window.location.origin) so it works whether the site is
+    // served from the domain root or a GitHub Pages project subpath such as
+    // username.github.io/repo/ — origin dropped the "/repo/" and caused a 404.
     const nextInput = form.querySelector('input[name="_next"]');
     if (nextInput) {
-      nextInput.value = window.location.origin +
-        '/thank-you.html?type=' + (form.dataset.type || '');
+      nextInput.value = new URL(
+        'thank-you.html?type=' + (form.dataset.type || ''),
+        window.location.href
+      ).href;
     }
 
     // Validate required fields
