@@ -39,6 +39,29 @@
   <section class="section">
     <div class="container">
 
+      <!-- SUBMISSION TYPES -->
+      <div style="max-width:900px; margin:0 auto 44px;">
+        <div style="text-align:center; margin-bottom:24px;">
+          <span class="section-tag">Two Submission Types</span>
+          <h2 style="color:var(--green-dark);">Choose How to Contribute</h2>
+          <p style="max-width:640px; margin:8px auto 0;">Presenters may submit one of two abstract types for the 2026 Symposium.</p>
+        </div>
+        <div class="submit-types">
+          <div class="submit-type available">
+            <span class="submit-type-badge badge-open">&#9679; Open Now</span>
+            <h3>Abstract Only</h3>
+            <p>Submit a standalone abstract (maximum 300 words) describing your work, reviewed by the SAIAE National Council.</p>
+            <a href="#abstract-only" class="btn btn-green">Submit Abstract Only &darr;</a>
+          </div>
+          <div class="submit-type coming-soon">
+            <span class="submit-type-badge badge-soon">Coming Soon</span>
+            <h3>Full-Paper Abstract</h3>
+            <p>Submit an abstract together with a full paper. The official template and submission details are being finalised and will be available here shortly.</p>
+            <span class="btn btn-disabled" aria-disabled="true">Available Soon</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Guidelines strip -->
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto 48px; ">
         <div class="card" style="padding:20px; border-left:4px solid var(--gold);">
@@ -64,15 +87,16 @@
         <strong>&#9993; How to submit:</strong> Email your abstract to <a href="mailto:senzo@saiae.co.za?subject=Symposium%20Abstract">senzo@saiae.co.za</a> with the subject line <strong>"Symposium Abstract"</strong>, or complete the form below. Abstracts must include a suitable title plus a photo and contact details of the corresponding author.
       </div>
 
-      <div class="form-wrap">
-        <h2 style="color:var(--green-dark); margin-bottom:4px;">Abstract Submission Form</h2>
+      <div class="form-wrap" id="abstract-only">
+        <h2 style="color:var(--green-dark); margin-bottom:4px;">Abstract-Only Submission Form</h2>
         <p style="margin-bottom:8px;">Fields marked <span style="color:#c0392b;">*</span> are required. Please review the <a href="#guidelines" style="color:var(--green-mid);">submission guidelines</a> before completing this form.</p>
 
         <!-- Submissions are delivered by FormSubmit (https://formsubmit.co) — no backend required.
              multipart/form-data lets the corresponding-author photo be sent as an attachment. -->
         <form id="abstractForm" action="https://formsubmit.co/senzo@saiae.co.za" method="POST" enctype="multipart/form-data" data-type="abstract" novalidate>
           <!-- FormSubmit configuration -->
-          <input type="hidden" name="_subject" value="New Abstract Submission — 2026 SAIAE" />
+          <input type="hidden" name="_subject" value="New Abstract Submission (Abstract Only) — 2026 SAIAE" />
+          <input type="hidden" name="submissionType" value="Abstract Only" />
           <!-- Auto-acknowledgement emailed to the author; SAIAE then accepts/reviews manually -->
           <input type="hidden" name="_autoresponse" value="Thank you for submitting your abstract to the 2026 SAIAE Biennial Symposium (21-23 October 2026, Upington, Northern Cape). We have received your submission. The SAIAE National Council will review it and notify you of the outcome by 31 August 2026. For any queries, contact senzo@saiae.co.za. - The South African Institute of Agricultural Engineers (SAIAE)" />
           <input type="hidden" name="_template" value="table" />
@@ -232,7 +256,10 @@
       </div>
       <div class="footer-contact"><p>&#9993; admin@saiae.co.za</p><p>&#9993; senzo@saiae.co.za</p><p>&#128222; 078 804 2673</p><p>&#127760; <a href="https://saiae.co.za/" target="_blank" rel="noopener">www.saiae.co.za</a></p></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 SAIAE Biennial Symposium · NPO Reg. No: 231-602 NPO · PBO Ref: 930075964 · PO Box 912 719, Silverton, 0127</p></div>
+    <div class="footer-cmt">
+        <p>The <strong>Microsoft CMT</strong> service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 SAIAE Biennial Symposium · NPO Reg. No: 231-602 NPO · PBO Ref: 930075964 · PO Box 912 719, Silverton, 0127</p></div>
   </footer>
 
   <script src="js/main.js"></script>

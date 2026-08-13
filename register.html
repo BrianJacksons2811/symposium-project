@@ -57,13 +57,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>Member — Single*</td><td>R 7 400</td><td>R 13 100</td><td>R 12 410</td><td>R 11 530</td></tr>
-              <tr><td>Member — Sharing*</td><td>—</td><td>R 10 880</td><td>R 10 250</td><td>—</td></tr>
-              <tr><td>Non-member — Single</td><td>R 9 400</td><td>R 15 100</td><td>R 14 410</td><td>R 13 530</td></tr>
-              <tr><td>Non-member — Sharing</td><td>—</td><td>R 12 880</td><td>R 12 250</td><td>—</td></tr>
-              <tr><td>Student / Pensioner — Single***</td><td>R 3 700</td><td>R 9 400</td><td>R 8 710</td><td>R 7 830</td></tr>
-              <tr><td>Student / Pensioner — Sharing***</td><td>—</td><td>R 7 180</td><td>R 6 550</td><td>—</td></tr>
-              <tr><td>Day Rate</td><td>R 2 470</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Member — Single*</td><td>R6 300.00</td><td>R12 000.00</td><td>R11 310.00</td><td>R10 430.00</td></tr>
+              <tr><td>Member — Sharing*</td><td>—</td><td>R9 780.00</td><td>R9 150.00</td><td>—</td></tr>
+              <tr><td>Non-member — Single</td><td>R8 300.00</td><td>R14 000.00</td><td>R13 310.00</td><td>R12 430.00</td></tr>
+              <tr><td>Non-member — Sharing</td><td>—</td><td>R11 780.00</td><td>R 11 150.00</td><td>—</td></tr>
+              <tr><td>Student / Pensioner — Single***</td><td>R3 150.00</td><td>R8 850.00</td><td>R8 160.00</td><td>R7 280.00</td></tr>
+              <tr><td>Student / Pensioner — Sharing***</td><td>—</td><td>R6 630.00</td><td>R6 000.00</td><td>—</td></tr>
+        
               <tr><td>Virtual — Member</td><td>R 5 000</td><td>—</td><td>—</td><td>—</td></tr>
               <tr><td>Virtual — Non-member</td><td>R 7 200</td><td>—</td><td>—</td><td>—</td></tr>
             </tbody>
@@ -179,13 +179,12 @@
             <label>Registration Type <span class="req">*</span></label>
             <select name="regType" required>
               <option value="">Select registration type…</option>
-              <option>Member — Single (R 7 400 conf. only)</option>
+              <option>Member — Single (R 6 300.00 conf. only)</option>
               <option>Member — Sharing (with accommodation)</option>
-              <option>Non-member — Single (R 9 400 conf. only)</option>
+              <option>Non-member — Single (R 8 300.00 conf. only)</option>
               <option>Non-member — Sharing (with accommodation)</option>
-              <option>Student / Pensioner — Single (R 3 700 conf. only)</option>
+              <option>Student / Pensioner — Single (R 3 150.00 conf. only)</option>
               <option>Student / Pensioner — Sharing (with accommodation)</option>
-              <option>Day Rate (R 2 470)</option>
               <option>Virtual — Member (R 5 000)</option>
               <option>Virtual — Non-member (R 7 200)</option>
             </select>
@@ -212,6 +211,25 @@
                 <option value="gluten-free">Gluten-Free</option>
                 <option value="other">Other (specify below)</option>
               </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Preferred Check-in Time <span style="font-weight:400; color:var(--text-muted);">(if booking accommodation)</span></label>
+              <select name="checkIn" onchange="var o=this.parentNode.querySelector('.other-time');o.style.display=this.value==='Other'?'block':'none';if(this.value!=='Other')o.value='';">
+                <option>14h00 (standard)</option>
+                <option value="Other">Other (specify)</option>
+              </select>
+              <input type="text" name="checkInOther" class="other-time" placeholder="Specify preferred check-in time" style="display:none; margin-top:8px;" />
+            </div>
+            <div class="form-group">
+              <label>Preferred Check-out Time <span style="font-weight:400; color:var(--text-muted);">(if booking accommodation)</span></label>
+              <select name="checkOut" onchange="var o=this.parentNode.querySelector('.other-time');o.style.display=this.value==='Other'?'block':'none';if(this.value!=='Other')o.value='';">
+                <option>11h00 (standard)</option>
+                <option value="Other">Other (specify)</option>
+              </select>
+              <input type="text" name="checkOutOther" class="other-time" placeholder="Specify preferred check-out time" style="display:none; margin-top:8px;" />
             </div>
           </div>
 
@@ -267,7 +285,10 @@
       </div>
       <div class="footer-contact"><p>&#9993; admin@saiae.co.za</p><p>&#9993; senzo@saiae.co.za</p><p>&#128222; 078 804 2673</p><p>&#127760; <a href="https://saiae.co.za/" target="_blank" rel="noopener">www.saiae.co.za</a></p></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 SAIAE Biennial Symposium · NPO Reg. No: 231-602 NPO · PBO Ref: 930075964 · PO Box 912 719, Silverton, 0127</p></div>
+    <div class="footer-cmt">
+        <p>The <strong>Microsoft CMT</strong> service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 SAIAE Biennial Symposium · NPO Reg. No: 231-602 NPO · PBO Ref: 930075964 · PO Box 912 719, Silverton, 0127</p></div>
   </footer>
 
   <script src="js/main.js"></script>
