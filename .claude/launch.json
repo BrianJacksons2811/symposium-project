@@ -6,6 +6,19 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "5500"],
       "port": 5500
+    },
+    {
+      "name": "ellem-marketing-dev",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5501",
+        "--directory",
+        "C:\\Users\\Afrihost\\ellem-mkt"
+      ],
+      "port": 5501,
+      "autoPort": true
     }
   ]
 }
