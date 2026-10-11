@@ -1,0 +1,11 @@
+
+# --- Secrets & local deployment config (added during security remediation, 2026-10-11) ---
+.vscode/sftp.json
+.vscode/settings.json
+.ftpquota
+.env
+.env.*
+!.env.example
+**/.env
+*.pem
+*.key
