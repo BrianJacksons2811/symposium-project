@@ -85,6 +85,20 @@
     </div>
   </section>
 
+  <!-- LIVE COUNTDOWN -->
+  <section class="countdown-band" aria-label="Countdown to the Symposium">
+    <div class="container">
+      <p class="countdown-label">Counting down to the 2026 SAIAE Biennial Symposium</p>
+      <div class="countdown" id="countdown" data-target="2026-10-21T09:00:00+02:00">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-lbl">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-lbl">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-lbl">Seconds</span></div>
+      </div>
+      <p class="countdown-sub" id="countdown-sub">21–23 October 2026 · Upington Protea Hotel Marriott, Northern Cape</p>
+    </div>
+  </section>
+
   <!-- ABOUT STRIP -->
   <section class="about-strip section bg-light">
     <div class="container about-inner">
@@ -295,5 +309,36 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- Live countdown to the Symposium (inline so it never depends on a cached main.js) -->
+  <script>
+    (function () {
+      var el = document.getElementById('countdown');
+      if (!el) return;
+      var target = new Date(el.getAttribute('data-target')).getTime();
+      var dEl = document.getElementById('cd-days'),
+          hEl = document.getElementById('cd-hours'),
+          mEl = document.getElementById('cd-mins'),
+          sEl = document.getElementById('cd-secs'),
+          sub = document.getElementById('countdown-sub');
+      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+      var timer;
+      function tick() {
+        var diff = target - Date.now();
+        if (diff <= 0) {
+          dEl.textContent = '0'; hEl.textContent = '00'; mEl.textContent = '00'; sEl.textContent = '00';
+          if (sub) sub.textContent = 'The 2026 SAIAE Biennial Symposium is here — 21–23 October 2026!';
+          clearInterval(timer);
+          return;
+        }
+        dEl.textContent = Math.floor(diff / 86400000);
+        hEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+        mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+        sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+      }
+      tick();
+      timer = setInterval(tick, 1000);
+    })();
+  </script>
 </body>
 </html>
